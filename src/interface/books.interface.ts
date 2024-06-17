@@ -41,28 +41,24 @@ export class OpenBooks implements IOpenBooks {
             const {title, desc, role}= listBooksCalDif[position];
             await this.page.getByRole('link', { name: `${role}` }).click();
             await expect(this.page.getByRole('heading', { name: `${title}` })).toHaveText(title);
-            //const locator = this.page.getByText(desc).
 
         }else if (this.book == 'Calculo Integral'){
 
             const {title, desc, role}= listBooksCalInt[position];
             await this.page.getByRole('link', { name: `${role}` }).click();
             await expect(this.page.getByRole('heading', { name: `${title}` })).toHaveText(title);
-            //const locator = this.page.getByText(desc).innerText();
             
         }else if (this.book == 'Calculo Vectorial'){  
 
             const {title, desc, role}= listBooksCalVec[position];
             await this.page.getByRole('link', { name: `${role}` }).click();
             await expect(this.page.getByRole('heading', { name: `${title}` })).toHaveText(title);
-            //const locator = this.page.getByText(desc).innerText();
             
         }else{
 
             const {title, desc, role}= ListBooksAlgebra[position];
             await this.page.getByRole('link', { name: `${role}` }).click();
             await expect(this.page.getByRole('heading', { name: `${title}` })).toHaveText(title);
-            //const locator = this.page.getByText(desc).innerText();
         }
 
         await this.page.waitForTimeout(6000);
